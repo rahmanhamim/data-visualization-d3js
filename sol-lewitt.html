@@ -5,6 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sol LeWitt ART</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <script>
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("width", width);
+      svg.setAttribute("height", height);
+      document.body.appendChild(svg);
+
+      const n = 100;
+      for (let i = 0; i < n; i++) {
+        const rect = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "rect"
+        );
+        rect.setAttribute("x", 20 * i);
+        rect.setAttribute("width", 10);
+        rect.setAttribute("height", height);
+        svg.appendChild(rect);
+      }
+    </script>
+  </body>
 </html>
