@@ -37,25 +37,12 @@ const renderMask = (selection, id, inverted) => {
     .attr("height", height)
     .attr("fill", inverted ? "black" : "white");
 
-  // const g = mask
-  //   .append("g")
-  //   .attr("transform", `translate(${width / 2}, ${height / 2})`);
-
   mask
-    .selectAll("g")
-    .data(d3.range(d3.symbolsFill.length))
-    .join((enter) =>
-      enter
-        .append("g")
-        .attr("transform", (d) => `translate(${d * 150 + 100}, ${height / 2})`)
-        .append("path")
-        .attr("d", (d) => d3.symbol(d3.symbolsFill[d], 10000)())
-        .attr("fill", inverted ? "white" : "black")
-    );
-
-  // .append("path")
-  // .attr("d", d3.symbol(d3.symbolsFill[4], 100000))
-  // .attr("fill", inverted ? "white" : "black");
+    .append("g")
+    .attr("transform", `translate(${width / 2}, ${height / 2})`)
+    .append("path")
+    .attr("d", d3.symbol(d3.symbolsFill[1], 100000))
+    .attr("fill", inverted ? "white" : "black");
 };
 // renderMask(svg, "mask-1", false);
 // renderMask(svg, "mask-2", true);
